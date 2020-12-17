@@ -21,57 +21,64 @@
                 <span></span>
             </div>
             <ul id="nav__container">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a class="btn">Hire Me</a></li>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project__h1">Work</a></li>
+                <li><a href="mailto:jakebpartin@gmail.com" class="btn">Hire Me</a></li>
             </ul>
         </nav>
         <section id="home">
-            <p class="circle landing--cricle"></p>
-            <div class="landing">
+            <p class="circle landing--cricle flow__object"></p>
+            <div class="landing flow__object">
                 <h1>Hi, I'm Christo</h1>
                 <p>I am a Java Developer, passionate about my work and love learning new things.</p>
-                <a href="#" class="gradient__text">Let's Chat!</a>
+                <a href="mailto:jakebpartin@gmail.com" class="gradient__text">Let's Chat!</a>
             </div>
-        </section>
+    </div>
+    </section>
     </div>
     <section id="about">
-        <div id="about__container">
-            <ul id="skill__container">
-                <li>
-                    <h1>Java<i class="fab fa-java"></i></h1>
-                    <p>I have 3 years of experience making personal projects that I use in my day to day life.</p>
-                </li>
-                <li>
-                    <h1>SpigotAPI<i class="fas fa-faucet"></i></h1>
-                    <p>I have been freelancing using the bukkit api since the beginning of this year.</p>
-                </li>
-                <li>
-                    <h1>MySQL<i class="fas fa-database"></i></h1>
-                    <p>I learned to use MySQL over two years ago to effeciently store data and to improve performance.
-                    </p>
-                </li>
-            </ul>
-            <div id="about__info">
-                <h1 id="aboutme">About Me</h1>
-                <p id="about__p"> Being in the field as long as I have been, I've gained some professional knowledge
-                    that definitely
-                    puts
-                    me above everyone else. I'm a motivated individual that strives to succeed and do everything to the
-                    best
-                    of my ability. I am a leader at heart, and I always do the right thing.</p>
-                <h2>Vouches</h2>
-                <p><b>Frostayy</b> -<br>
-                    "Vouch, good developer, have worked with in the past" (MCM) <a href="http://prntscr.com/tq7rvd"
-                        target="_blank">(http://prntscr.com/tq7rvd)</a></p>
-                <p><b>GenGummy</b> -<br>
-                    "Vouch, Great dude. Very reliable and works hard." (MCM) <a href="http://prntscr.com/tq7s5f"
-                        target="_blank">(http://prntscr.com/tq7s5f)</a></p>
-                <p><b>LegendSp4rda</b> - (<i>Translated into better English</i>) -<br>
-                    "He developed a unique plugin for my survival server. I recommend him to everyone, 100% effiecient,
-                    100% responsible, 100% attentive." (MCM) <a href="http://prntscr.com/tq7skd"
-                        target="_blank">(http://prntscr.com/tq7skd)</a></p>
+        <div class="flow__container">
+            <div id="about__container">
+                <ul id="skill__container">
+                    <li class="flow__object">
+                        <h1>Java<i class="fab fa-java"></i></h1>
+                        <p>I have 3 years of experience making personal projects that I use in my day to day life.</p>
+                    </li>
+                    <li class="flow__object">
+                        <h1>SpigotAPI<i class="fas fa-faucet"></i></h1>
+                        <p>I have been freelancing using the bukkit api since the beginning of this year.</p>
+                    </li>
+                    <li class="flow__object">
+                        <h1>MySQL<i class="fas fa-database"></i></h1>
+                        <p>I learned to use MySQL over two years ago to effeciently store data and to improve
+                            performance.
+                        </p>
+                    </li>
+                </ul>
+                <div id="about__info">
+                    <h1 id="aboutme" class="flow__object">About Me</h1>
+                    <p id="about__p" class="flow__object"> Being in the field as long as I have been, I've gained some
+                        professional knowledge
+                        that definitely
+                        puts
+                        me above everyone else. I'm a motivated individual that strives to succeed and do everything to
+                        the
+                        best
+                        of my ability. I am a leader at heart, and I always do the right thing.</p>
+                    <h2 class="flow__object">Vouches</h2>
+                    <p class="flow__object"><b>Frostayy</b> -<br>
+                        "Vouch, good developer, have worked with in the past" (MCM) <a href="http://prntscr.com/tq7rvd"
+                            target="_blank">(http://prntscr.com/tq7rvd)</a></p>
+                    <p class="flow__object"><b>GenGummy</b> -<br>
+                        "Vouch, Great dude. Very reliable and works hard." (MCM) <a href="http://prntscr.com/tq7s5f"
+                            target="_blank">(http://prntscr.com/tq7s5f)</a></p>
+                    <p class="flow__object"><b>LegendSp4rda</b> - (<i>Translated into better English</i>) -<br>
+                        "He developed a unique plugin for my survival server. I recommend him to everyone, 100%
+                        effiecient,
+                        100% responsible, 100% attentive." (MCM) <a href="http://prntscr.com/tq7skd"
+                            target="_blank">(http://prntscr.com/tq7skd)</a></p>
+                </div>
             </div>
         </div>
     </section>
@@ -80,9 +87,12 @@
             <path fill="rgb(35, 36, 46)" fill-opacity="1" d="M0,288L1440,64L1440,320L0,320Z"></path>
         </svg>
         <div id="projects__container">
-            <h1 id="project__h1">Projects</h1>
-            <div class="carousel">
-
+            <h1 id="project__h1" class="flow__object">Projects</h1>
+            <div class="carousel flow__object"></div>
+            <div class="arrows">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <div class="indicator"></div>
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </div>
         </div>
     </section>
@@ -90,16 +100,18 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="rgb(53, 54, 68)" fill-opacity="1" d="M0,288L1440,64L1440,320L0,320Z"></path>
         </svg>
+        <img class="flow__object" src="./images/Christo.png" alt="minecraft skin">
         <div id="contact__container">
-            <h1>OK, LET’S CREATE SOMETHING GREAT</h1>
-            <p>If you like my work and have a cool project to work on, just contact me below!</p>
-            <button class="btn contact--btn">Let's Talk</button>
+            <h1 class="flow__object">OK, LET’S CREATE SOMETHING GREAT</h1>
+            <p class="flow__object">If you like my work and have a cool project to work on, just contact me below!
+            </p>
+            <a href="mailto:jakebpartin@gmail.com" class="btn contact--btn flow__object">Let's Talk</a>
         </div>
     </section>
     <section id="footer">
         <ul>
             <li><a href=""><i class="fab fa-github"></a></i></li>
-            <li class="discord"><a href="" ><i class="fab fa-discord"></i></a></li>
+            <li class="discord"><a href=""><i class="fab fa-discord"></i></a></li>
         </ul>
         <span></span>
         <p>© 2020 - Developed by Jacob Partin</p>

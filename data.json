@@ -1,0 +1,25 @@
+{
+    "projects": [
+        {
+            "image": "project1.jpg",
+            "name": "Skyblock Core",
+            "description": "This is skyblock core has all features the players will be using in the server!",
+            "codelink": "http://www.google.com",
+            "demolink": "http://www.google.com"
+        },
+        {
+            "image": "project2.jpg",
+            "name": "Prison Core",
+            "description": "This is prison core has all the bugs players will be annoyed by!",
+            "codelink": "http://www.google.com",
+            "demolink": "none"
+        },
+        {
+            "image": "project3.jpg",
+            "name": "Faction Core",
+            "description": "I couldnt even be bothered to think of anything here!",
+            "codelink": "http://www.google.com",
+            "demolink": "http://www.google.com"
+        }
+    ]
+}
