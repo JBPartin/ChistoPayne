@@ -84,6 +84,52 @@ document.addEventListener('click', (event) => {
         addtime();
     }
 });
+
+//swipe effect for mobile
+let touch = {
+    start: null,
+    up: null,
+    area: null
+}
+window.addEventListener('touchstart', (event) => {
+    touch.start = event.changedTouches[0].pageX;
+    touch.up = event.changedTouches[0].pageY;
+    const projects = Array.from(document.querySelector('.carousel').children);
+    for (let x in projects) {
+        if (!Array.from(projects[x].classList).includes('project--visible'))
+            continue;
+        if (projects[x].getBoundingClientRect().bottom > 350 && projects[x].getBoundingClientRect().top < 350) {
+            touch.area = true;
+        } else {
+            touch.area = false;
+        }
+    }
+});
+window.addEventListener('touchend', (event) => {
+    if (touch.area == false)
+        return;
+    const query = Array.from(document.querySelector('.indicator').children);
+    const prev = query.indexOf(document.querySelector('.current'));
+    let end = event.changedTouches[0].pageX;
+    let down = event.changedTouches[0].pageY;
+    let ydifference = down > touch.up ? down - touch.up : touch.up - down;
+    let xdifference = end > touch.start ? end - touch.start : touch.start - end;
+    if (ydifference < xdifference) {
+        if (touch.start > end) {
+            if (query.length > prev + 1)
+                switchcurrent(prev, prev + 1);
+            else
+                switchcurrent(prev, 0);
+            addtime();
+        } else {
+            if (prev - 1 >= 0)
+                switchcurrent(prev, prev - 1);
+            else
+                switchcurrent(prev, query.length - 1);
+            addtime();
+        }
+    }
+});
 //on load event
 window.addEventListener('load', () => {
     //loading json data
@@ -133,18 +179,18 @@ window.addEventListener('load', () => {
                 button.classList.add('current');
             indicator.appendChild(button);
         }
+        //carousel scrolling
+        const query = Array.from(document.querySelector('.indicator').children);
+        setInterval(() => {
+            if (!hasinteracted) {
+                const prev = query.indexOf(document.querySelector('.current'));
+                if (query.length > prev + 1)
+                    switchcurrent(prev, prev + 1);
+                else
+                    switchcurrent(prev, 0);
+            }
+        }, 5000);
     });
-    //carousel scrolling
-    const query = Array.from(document.querySelector('.indicator').children);
-    setInterval(() => {
-        if (!hasinteracted) {
-            const prev = query.indexOf(document.querySelector('.current'));
-            if (query.length > prev + 1)
-                switchcurrent(prev, prev + 1);
-            else
-                switchcurrent(prev, 0);
-        }
-    }, 5000);
     //intial animation
     const contentlist = document.querySelectorAll('.flow__object');
     for (let content in contentlist) {
