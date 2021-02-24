@@ -64,6 +64,15 @@ document.addEventListener('click', (event) => {
         nav.classList.toggle('active');
     } else {
         if (burger.classList.contains('active')) {
+            if (Array.from(event.target.classList).includes("discord-copy")) {
+                setTimeout(() => {
+                    if (burger.classList.contains('active')) {
+                        burger.classList.toggle('active');
+                        nav.classList.toggle('active');
+                    }
+                }, 2000);
+                return;
+            }
             burger.classList.toggle('active');
             nav.classList.toggle('active');
         }
@@ -85,12 +94,26 @@ document.addEventListener('click', (event) => {
     }
 });
 
-//swipe effect for mobile
+//mobile event storage
 let touch = {
     start: null,
     up: null,
     area: null
 }
+
+function copyStringToClipboard(str) {
+    var el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style = { position: 'absolute', left: '-9999px' };
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+}
+
+
+//swipe effect for mobile start
 window.addEventListener('touchstart', (event) => {
     touch.start = event.changedTouches[0].pageX;
     touch.up = event.changedTouches[0].pageY;
@@ -105,6 +128,9 @@ window.addEventListener('touchstart', (event) => {
         }
     }
 });
+
+
+//swipe effect for mobile end
 window.addEventListener('touchend', (event) => {
     if (touch.area == false)
         return;
@@ -130,11 +156,13 @@ window.addEventListener('touchend', (event) => {
         }
     }
 });
+
 //on load event
 window.addEventListener('load', () => {
     //loading json data
     const carousel = document.querySelector('.carousel');
     const indicator = document.querySelector('.indicator');
+    const clients = document.querySelector('.clients__list');
     readTextFile("data.json", function (text) {
         var data = JSON.parse(text);
         for (let x in data.projects) {
@@ -179,6 +207,18 @@ window.addEventListener('load', () => {
                 button.classList.add('current');
             indicator.appendChild(button);
         }
+        for (let x in data.clients) {
+            let div = document.createElement("div");
+            div.classList.add('client');
+            div.classList.add('flow__object');
+            let name = document.createElement('p');
+            name.innerHTML = data.clients[x].text;
+            let img = document.createElement('img');
+            img.src = 'images/' + data.clients[x].icon;
+            div.appendChild(img);
+            div.appendChild(name);
+            clients.appendChild(div);
+        }
         //carousel scrolling
         const query = Array.from(document.querySelector('.indicator').children);
         setInterval(() => {
@@ -190,6 +230,21 @@ window.addEventListener('load', () => {
                     switchcurrent(prev, 0);
             }
         }, 5000);
+        const discord = Array.from(document.querySelectorAll('.discord-copy'));
+        for (let y in discord) {
+            const inner = discord[y].innerHTML;
+            discord[y].addEventListener('click', () => {
+                copyStringToClipboard("Christo#7593");
+                if (Array.from(discord[y].classList).includes('no-change')) {
+                    alert("\nCopied: Christo#7593");
+                    return;
+                }
+                discord[y].innerHTML = "Copied Tag";
+                setTimeout(() => {
+                    discord[y].innerHTML = inner;
+                }, 2000);
+            });
+        }
     });
     //intial animation
     const contentlist = document.querySelectorAll('.flow__object');

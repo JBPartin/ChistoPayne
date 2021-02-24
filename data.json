@@ -1,25 +1,39 @@
 {
     "projects": [
         {
-            "image": "project1.jpg",
+            "image": "tenor.gif",
             "name": "Skyblock Core",
             "description": "This is skyblock core has all features the players will be using in the server!",
             "codelink": "http://www.google.com",
             "demolink": "http://www.google.com"
         },
         {
-            "image": "project2.jpg",
+            "image": "tenor.gif",
             "name": "Prison Core",
             "description": "This is prison core has all the bugs players will be annoyed by!",
             "codelink": "http://www.google.com",
             "demolink": "none"
         },
         {
-            "image": "project3.jpg",
+            "image": "tenor.gif",
             "name": "Faction Core",
-            "description": "I couldnt even be bothered to think of anything here!",
+            "description": "Optimzed envoy plugin with a unique falling animation. Perfect for faction servers.",
             "codelink": "http://www.google.com",
             "demolink": "http://www.google.com"
+        }
+    ],
+    "clients": [
+        {
+            "icon": "tenor.gif",
+            "text": "fatalmoment"
+        },
+        {
+            "icon": "tenor.gif",
+            "text": "christo"
+        },
+        {
+            "icon": "tenor.gif",
+            "text": "devoxy"
         }
     ]
 }
